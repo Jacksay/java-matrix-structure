@@ -61,6 +61,14 @@ public class Matrix<E, F> implements Iterable<F> {
             datas.put(rows[i], line);
         }
     }
+    
+    public Set<E> getColumns() {
+        return datas.keySet();
+    }
+    
+    public Set<E> getLines() {
+        return datas.values().iterator().next().keySet();
+    }
 
     protected Map<E, F> getLine(E index) {
         return datas.get(index);
