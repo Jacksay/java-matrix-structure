@@ -48,12 +48,12 @@ public class Matrix<E, F> implements Iterable<F> {
 
     public Matrix(E[] cols, E[] rows, F[][] values, boolean isDiagonal,
             F defaultValue) {
-        datas = new TreeMap<>();
+        datas = new TreeMap<E, Map<E, F>>();
         this.isDiagonal = isDiagonal;
         numRow = rows.length;
         numCol = cols.length;
         for (int i = 0; i < rows.length; i++) {
-            Map line = new TreeMap<>();
+            Map line = new TreeMap();
             for (int j = 0; j < cols.length; j++) {
                 F value = (values == null) ? defaultValue : values[i][j];
                 line.put(cols[j], value);
@@ -106,7 +106,7 @@ public class Matrix<E, F> implements Iterable<F> {
      * @return List<F>
      */
     public List<F> getColumnValues(E col) {
-        List<F> out = new ArrayList<>();
+        List<F> out = new ArrayList<F>();
         for (Map<E, F> map : datas.values()) {
             out.add(map.get(col));
         }
