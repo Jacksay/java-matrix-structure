@@ -69,5 +69,15 @@ public class MatrixNumeric<E> extends Matrix<E, Double> {
             tmpTotalColumn += d;
         }
         return tmpTotalColumn;
-    }  
+    }
+    
+    public double increment( E line, E column, double amount ){
+        double value = getValue(line, column);
+        setValue(line, column, value + amount);
+        return value;
+    }
+    
+    public double increment( E line, E column ){
+        return increment(line, column, 1.0);
+    }
 }

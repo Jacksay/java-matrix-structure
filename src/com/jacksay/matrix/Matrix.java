@@ -93,7 +93,7 @@ public class Matrix<E, F> implements Iterable<F> {
      *
      * @param x E Position X
      * @param y E Position Y
-     * @param value F Value insert
+     * @return 
      */
     public F getValue(E x, E y) {
         return datas.get(x).get(y);

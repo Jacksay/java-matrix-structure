@@ -20,11 +20,16 @@ public class MatrixTest {
     private Matrix<String, Double> manuelMatrix;
     
     public MatrixTest() {
-        diagonalMatrix = new Matrix<String, Double>(new String[]{"A", "B", "C"}, Matrix.DIAGONAL);
+        diagonalMatrix = new Matrix<>(new String[]{"A", "B", "C"}, Matrix.DIAGONAL);
 
-        manuelMatrix = new Matrix<String, Double>(new String[]{"A", "B", "C"}, new Double[][]{{0.0, 0.1, 0.2},
+        manuelMatrix = new Matrix<>(
+                new String[]{"A", "B", "C"}, 
+                new Double[][]{
+                    {0.0, 0.1, 0.2},
                     {1.0, 1.1, 1.2},
-                    {2.0, 2.1, 2.2}}, Matrix.FREE, .0);
+                    {2.0, 2.1, 2.2}}, 
+                Matrix.FREE, 
+                .0);
 
     }
     
